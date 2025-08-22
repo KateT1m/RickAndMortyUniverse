@@ -29,9 +29,9 @@ export const CharacterPage = () => {
   }
 
   return (
-    <div className="h-screen p-20 flex flex-col gap-10 justify-center items-center w-full">
+    <div className="pt-10 flex flex-col gap-10 justify-center items-center w-full">
       <Title text="Вселенная Рик и Морти" />
-      <img className="w-1/3" src={character?.image} alt="" />
+      <img className="w-1/5" src={character?.image} alt="" />
       <p className="text-lime-400 font-sans font-bold text-2xl">
         Персонаж {character?.name}
       </p>
