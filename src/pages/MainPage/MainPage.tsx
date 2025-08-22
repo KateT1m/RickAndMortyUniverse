@@ -5,7 +5,6 @@ import { Selector } from "../../components/Selector/Selector";
 import { Title } from "../../components/Title/Title";
 import type { Character } from "../../types";
 
-
 function MainPage() {
   const [characters, setCharacters] = useState([] as Character[]);
   const [search, setSearch] = useState("");
@@ -17,11 +16,18 @@ function MainPage() {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      const url = `https://rickandmortyapi.com/api/character/?name=${search}`;
-
-      const response = await fetch(`${url}`);
-      const data = await response.json();
-      setCharacters(data.results);
+      try {
+        const url = `https://rickandmortyapi.com/api/character/?name=${search}`;
+        const response = await fetch(`${url}`);
+        if (!response.ok) {
+          setCharacters([]);
+        } else {
+          const data = await response.json();
+          setCharacters(data.results);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchCharacters();
   }, [search]);

@@ -14,6 +14,7 @@ export const ItemsList: React.FC<IItemsList> = ({items}) => {
                 <li></li>
             </ul>
             <ul className="flex flex-col gap-5 justify-center items-center w-full">
+                {(items.length === 0) && <p className="text-lime-400 font-sans font-bold text-2xl">Тут никого нет(</p>}
                 {items.map((item) => (
                     <Item key={item.id} item={item} />
                 ))}
