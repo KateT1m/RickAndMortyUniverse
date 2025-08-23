@@ -8,7 +8,7 @@ interface IButton {
 
 export const Button: React.FC<IButton> = ({ text, goTo, onClick }) => {
   return (
-    <Link onClick={onClick} to={goTo} className="bg-lime-600 text-lime-950 w-1/6 flex flex-row justify-around border rounded-md p-3 border-lime-400">
+    <Link onClick={onClick} to={goTo} className="bg-lime-600 hover:bg-lime-400 w-full md:w-1/3 lg:w-1/5 text-lime-950 flex flex-row text-center justify-around border rounded-md p-3 border-lime-400">
       {text}
     </Link>
   );

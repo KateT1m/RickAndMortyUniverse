@@ -8,7 +8,7 @@ interface IItemsList {
 
 export const ItemsList: React.FC<IItemsList> = ({items}) => {
     return (
-        <div className="flex flex-col gap-5 justify-center items-start w-1/2">
+        <div className="flex flex-col gap-5 justify-center items-start w-full lg:w-1/2">
             <Title text="Найдено" />
             <ul>
                 <li></li>

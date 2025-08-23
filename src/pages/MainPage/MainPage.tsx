@@ -135,10 +135,10 @@ function MainPage() {
   const episodeNumber = filters.episode.split('/').pop();
 
   return (
-    <div className="flex flex-col gap-10 pt-10 pb-10 items-center">
+    <div className="flex flex-col gap-10 p-10 items-center">
       <Title text="Вселенная Рик и Морти" />
       <SearchBar value={search} title="Имя персонажа" onChange={handleInputChange} />
-      <div className="flex gap-10 w-1/2">
+      <div className="flex gap-5 md:gap-10 w-full lg:w-1/2">
         <Selector
           onChange={handleStatusSelectChange}
           title={"Жив?"}
