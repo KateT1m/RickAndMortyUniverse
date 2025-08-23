@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Title } from "../../components/Title/Title";
 import type { Character } from "../../types";
-import { Link } from "react-router-dom";
+import { Button } from "../../components/Button/Button";
 
 export const CharacterPage = () => {
   const { id } = useParams();
@@ -52,12 +52,7 @@ export const CharacterPage = () => {
           .map((episode) => episode.split("/").pop())
           .join(", ")}
       </p>
-      <Link
-        to="/"
-        className="leading-none border-lime-400 bg-lime-600 text-lime-950 font-sans font-bold text-2xl border rounded-md p-4"
-      >
-        На главную
-      </Link>
+      <Button text="На главную" goTo="/" />
     </div>
   );
 };
